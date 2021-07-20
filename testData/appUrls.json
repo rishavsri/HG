@@ -1,0 +1,8 @@
+{
+	"homePageUrl": "http://qa.hyperdrive.solutions/",
+	"userPageUrl": "http://qa.hyperdrive.solutions/users",
+	"projectsPageUrl": "http://qa.hyperdrive.solutions/projects",
+	"datasourcePageUrl": "http://qa.hyperdrive.solutions/datasources",
+	"notebookServersPageUrl": "http://qa.hyperdrive.solutions/notebooks",
+	"modelPageUrl": "http://qa.hyperdrive.solutions/models"
+}

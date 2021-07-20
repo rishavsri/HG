@@ -1,0 +1,15 @@
+{
+	"firstName":"Automation",
+	"lastName": "Test",
+	"emailID": "test@gmail.com",
+	"group": "Azure",
+	"firstName2":"AutomationSecond",
+	"lastName2": "TestSecond",
+	"emailID2": "testSecond@gmail.com",
+	"marketing": "Marketing",
+	"selectGroup":[
+		{
+			"value":["Marketing",""]
+		}
+	]
+}
