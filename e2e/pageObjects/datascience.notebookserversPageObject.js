@@ -50,7 +50,10 @@ ServerName = "//div[text()='Server Name']",
 ProjectName = "//div[text()='Project Name']",
 Customer = "//div[text()='Customer']",
 Status = "//div[text()='Status']",
-DateCreated = "//div[text()='Date Created']"
+DateCreated = "//div[text()='Date Created']",
+
+UpArrow = "//div[normalize-space()='Server Name']//div[@class='css-1cnxdvx']",
+DownArrow = "//div[normalize-space()='Server Name']//div[@class='css-1cnxdvx']//*[local-name()='svg']"
 };
 
 
@@ -85,6 +88,29 @@ datascience_notebookserver.prototype.clickServerName = function () {
     });
 };
 
+datascience_notebookserver.prototype.upArrow = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.UpArrow))), 160000).then(function () {
+        logger.info("Waiting for UpArrow to be clickable...");
+    }).catch(function (err) {
+        logger.info("Up Arrow is not clickable...");
+    });
+    return element(by.xpath(this.UpArrow)).click().then(function () {
+        logger.info("clicked on Up Arrow......");
+    });
+};
+
+datascience_notebookserver.prototype.downArrow = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.DownArrow))), 160000).then(function () {
+        logger.info("Waiting for DownArrow to be clickable...");
+    }).catch(function (err) {
+        logger.info("Down Arrow is not clickable...");
+    });
+    return element(by.xpath(this.DownArrow)).click().then(function () {
+        logger.info("clicked on Down Arrow......");
+    });
+};
 datascience_notebookserver.prototype.clickProjectName = function () {
         
     browser.wait(EC.elementToBeClickable(element(by.xpath(this.ProjectName))), 160000).then(function () {

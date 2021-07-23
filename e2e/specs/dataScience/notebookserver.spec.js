@@ -81,6 +81,58 @@ describe('Datascience - Notebookserver', function () {
             expect(datascienceNotebookserverPage.clickDateCreated()).totoBe(true);
         });
 
+        it("Verify clicking on Server Name displays ↑ arrow ", function () {
+            datascienceNotebookserverPage.clickServerName();
+            expect(datascienceNotebookserverPage.UpArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Project Name displays ↑ arrow ", function () {
+            datascienceNotebookserverPage.clickProjectName();
+            expect(datascienceNotebookserverPage.UpArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Customer displays ↑ arrow ", function () {
+            datascienceNotebookserverPage.clickCustomer();
+            expect(datascienceNotebookserverPage.UpArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Status displays ↑ arrow ", function () {
+            datascienceNotebookserverPage.clickStatus();
+            expect(datascienceNotebookserverPage.UpArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Date Created displays ↑ arrow", function () {
+            datascienceNotebookserverPage.clickDateCreated();
+            expect(datascienceNotebookserverPage.UpArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Server Name displays ↓ arrow  ", function () {
+            datascienceNotebookserverPage.clickServerName();
+            expect(datascienceNotebookserverPage.downArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Project Name displays ↓ arrow  ", function () {
+            datascienceNotebookserverPage.clickProjectName();
+            expect(datascienceNotebookserverPage.downArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Customer displays ↓ arrow ", function () {
+            datascienceNotebookserverPage.clickCustomer();
+            expect(datascienceNotebookserverPage.downArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Status displays ↓ arrow  ", function () {
+            datascienceNotebookserverPage.clickStatus();
+            expect(datascienceNotebookserverPage.downArrow()).totoBe(true);
+        });
+
+        it("Verify clicking on Date Created displays ↓ arrow  ", function () {
+            datascienceNotebookserverPage.clickDateCreated();
+            expect(datascienceNotebookserverPage.downArrow()).totoBe(true);
+        });
+
+
+
         it("Verify total numbers of servers on page", function () {
             datascienceNotebookserverPage.getTotalServerCount();
             
