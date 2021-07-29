@@ -53,7 +53,19 @@ Status = "//div[text()='Status']",
 DateCreated = "//div[text()='Date Created']",
 
 UpArrow = "//div[normalize-space()='Server Name']//div[@class='css-1cnxdvx']",
-DownArrow = "//div[normalize-space()='Server Name']//div[@class='css-1cnxdvx']//*[local-name()='svg']"
+DownArrow = "//div[normalize-space()='Server Name']//div[@class='css-1cnxdvx']//*[local-name()='svg']",
+
+jupyter = "//a[text()='Jupyter']",
+jupyterLab = "//a[text()='Jupyter Lab']",
+deleteTestServer = "//button[@aria-label='Delete notebook server Test server AFVH']",
+
+status = "//p[text()='Online']",
+
+notebookServerText = "//div[@class='css-20lp4v']",
+notebookName = "//p[text()='Name']",
+notebookImage = "//p[text()='Image']",
+notebookCpu = "//p[text()='CPU / RAM']",
+notebookGPU = "GPUs"
 };
 
 
@@ -75,6 +87,43 @@ datascience_notebookserver.prototype.clickDatascience = function () {
         logger.info("clicked on Data Science...");
     });
 };
+
+datascience_notebookserver.prototype.clickJupyter = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.jupyter))), 160000).then(function () {
+        logger.info("Waiting for jupyter to be clickable...");
+    }).catch(function (err) {
+        logger.info("Jupyter is not clickable...");
+    });
+    return element(by.xpath(this.jupyter)).click().then(function () {
+        logger.info("clicked on jupyter......");
+    });
+};
+
+datascience_notebookserver.prototype.clickJupyterLab = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.jupyterLab))), 160000).then(function () {
+        logger.info("Waiting for jupyterLab to be clickable...");
+    }).catch(function (err) {
+        logger.info("Jupyter Lab is not clickable...");
+    });
+    return element(by.xpath(this.jupyterLab)).click().then(function () {
+        logger.info("clicked on jupyter Lab......");
+    });
+};
+
+datascience_notebookserver.prototype.clickTrashCan = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.deleteTestServer))), 160000).then(function () {
+        logger.info("Waiting for TrashCan to be clickable...");
+    }).catch(function (err) {
+        logger.info("Trash Can is not clickable...");
+    });
+    return element(by.xpath(this.deleteTestServer)).click().then(function () {
+        logger.info("clicked on Trash Can......");
+    });
+};
+
 
 datascience_notebookserver.prototype.clickServerName = function () {
         
@@ -432,5 +481,78 @@ datascience_notebookserver.prototype.getImageDescription = function () {
     })
 };
 
+datascience_notebookserver.prototype.getStatus = function () {
+    browser.wait(EC.textToBePresentInElement(element(by.xpath(this.status)), 'Projects'), 5000).then(function () {
+        logger.info("Status is present..")
+    }).catch(function () {
+        logger.info("Status is not Present..")
+    });
+    return element(by.xpath(this.status)).getText().then(function (Status) {
+        logger.info("Status is fetched successfully.." + Status + "###############")
+        return Status;
+    })
+};
+
+datascience_notebookserver.prototype.getNoteBookServer = function () {
+    browser.wait(EC.textToBePresentInElement(element(by.xpath(this.notebookServerText)), 'Projects'), 5000).then(function () {
+        logger.info("Status is present..")
+    }).catch(function () {
+        logger.info("Status is not Present..")
+    });
+    return element(by.xpath(this.notebookServerText)).getText().then(function (text) {
+        logger.info("Status is fetched successfully.." + text + "###############")
+        return text;
+    })
+};
+
+datascience_notebookserver.prototype.getNoteBookName = function () {
+    browser.wait(EC.textToBePresentInElement(element(by.xpath(this.notebookName)), 'Projects'), 5000).then(function () {
+        logger.info("NoteBook Name is present..")
+    }).catch(function () {
+        logger.info("NoteBook Name is not Present..")
+    });
+    return element(by.xpath(this.notebookName)).getText().then(function (text) {
+        logger.info("Notebook Name is fetched successfully.." + text + "###############")
+        return text;
+    })
+};
+
+datascience_notebookserver.prototype.getNoteBookImage = function () {
+    browser.wait(EC.textToBePresentInElement(element(by.xpath(this.notebookImage)), 'Projects'), 5000).then(function () {
+        logger.info("NoteBook Image is present..")
+    }).catch(function () {
+        logger.info("NoteBook Image is not Present..")
+    });
+    return element(by.xpath(this.notebookImage)).getText().then(function (text) {
+        logger.info("Notebook Image is fetched successfully.." + text + "###############")
+        return text;
+    })
+};
+
+datascience_notebookserver.prototype.getNoteCPU = function () {
+    browser.wait(EC.textToBePresentInElement(element(by.xpath(this.notebookCpu)), 'Projects'), 5000).then(function () {
+        logger.info("NoteBook CPU is present..")
+    }).catch(function () {
+        logger.info("NoteBook CPU is not Present..")
+    });
+    return element(by.xpath(this.notebookCpu)).getText().then(function (text) {
+        logger.info("Notebook CPU is fetched successfully.." + text + "###############")
+        return text;
+    })
+};
+
+datascience_notebookserver.prototype.getNoteGPU = function () {
+    browser.wait(EC.textToBePresentInElement(element(by.xpath(this.notebookGPU)), 'Projects'), 5000).then(function () {
+        logger.info("NoteBook GPU is present..")
+    }).catch(function () {
+        logger.info("NoteBook GPU is not Present..")
+    });
+    return element(by.xpath(this.notebookGPU)).getText().then(function (text) {
+        logger.info("Notebook GPU is fetched successfully.." + text + "###############")
+        return text;
+    })
+};
+
 //********************************End Functions use to Get Text******************/
 module.exports = datascience_notebookserver;
+

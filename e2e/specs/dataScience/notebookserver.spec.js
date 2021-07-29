@@ -131,6 +131,52 @@ describe('Datascience - Notebookserver', function () {
             expect(datascienceNotebookserverPage.downArrow()).totoBe(true);
         });
 
+        it("Verify Jupyter button is clickable ", function () {
+            
+            expect(datascienceNotebookserverPage.clickJupyter()).totoBe(true);
+        });
+
+        it("Verify Jupyter Lab button is clickable ", function () {
+            
+            expect(datascienceNotebookserverPage.clickJupyterLab()).totoBe(true);
+        });
+
+        it("Verify Trash Can is clickable ", function () {
+            
+            expect(datascienceNotebookserverPage.clickTrashCan()).totoBe(true);
+        });
+
+        it("Verify Jupyter and Jupyter Lab button is clickable when status is online ", function () {
+            if (datascienceNotebookserverPage.getStatus() == "Online") 
+            {
+                expect(datascienceNotebookserverPage.clickJupyter()).totoBe(true);
+                expect(datascienceNotebookserverPage.clickJupyterLab()).totoBe(true);
+            } else 
+            {
+                expect(datascienceNotebookserverPage.clickJupyter()).totoBe(false);
+                expect(datascienceNotebookserverPage.clickJupyterLab()).totoBe(false);
+            }
+            
+        });
+
+        it("Verify Pop Up displays when clicking on create Server button", function () {
+
+            datascienceNotebookserverPage.clickCreateServer();
+            expect(datascienceNotebookserverPage.clickLaunchBtn()).totoBe(true);
+            expect(datascienceNotebookserverPage.clickcancelbtn()).totoBe(true);
+            expect(datascienceProjectsPage.getNoteBookServer()).toEqual("CREATE NEW NOTEBOOK SERVER");
+
+        });
+
+        it("Verify Name, Image, CPU/RAM, GPU is displayed in popup when clicking on create Server button", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            expect(datascienceProjectsPage.getNoteBookName()).toEqual("Name");
+            expect(datascienceProjectsPage.getNoteBookImage()).toEqual("Image");
+            expect(datascienceProjectsPage.getNoteCPU()).toEqual("CPU / RAM");
+            expect(datascienceProjectsPage.getNoteGPU()).toEqual("GPUs");
+
+        });
 
 
         it("Verify total numbers of servers on page", function () {
