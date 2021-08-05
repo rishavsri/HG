@@ -178,6 +178,69 @@ describe('Datascience - Notebookserver', function () {
 
         });
 
+        it("Verify Project Dropdown displays testing Notebook available to the user", function () {
+            
+           datascienceNotebookserverPage.clickCreateServer();
+           datascienceNotebookserverPage.clickProjectID();
+           expect(datascienceNotebookserverPage.clicktestingNotebook()).totoBe(true);
+    
+        });
+
+        it("Verify Project Dropdown displays test available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clicktest()).totoBe(true);
+     
+         });
+
+         it("Verify Project Dropdown displays notebook1 available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clicknotebook1()).totoBe(true);
+     
+         });
+
+         it("Verify Project Dropdown displays perfprojectejaB available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clickperfprojectejaB()).totoBe(true);
+     
+         });
+
+         it("Verify Project Dropdown displays perfprojectfqRs available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clickperfprojectfqRs()).totoBe(true);
+     
+         });
+
+         it("Verify Project Dropdown displays perfprojectqZyD available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clickperfprojectqZyD()).totoBe(true);
+     
+         });
+
+         it("Verify Project Dropdown displays perfproject4CDHS available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clickperfproject4CDHS()).totoBe(true);
+            
+         });
+
+         it("Verify Project Dropdown displays demoprojectNbfT available to the user", function () {
+            
+            datascienceNotebookserverPage.clickCreateServer();
+            datascienceNotebookserverPage.clickProjectID();
+            expect(datascienceNotebookserverPage.clickdemoprojectNbfT()).totoBe(true);
+            
+         });
 
         it("Verify total numbers of servers on page", function () {
             datascienceNotebookserverPage.getTotalServerCount();

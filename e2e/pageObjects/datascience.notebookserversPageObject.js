@@ -65,7 +65,17 @@ notebookServerText = "//div[@class='css-20lp4v']",
 notebookName = "//p[text()='Name']",
 notebookImage = "//p[text()='Image']",
 notebookCpu = "//p[text()='CPU / RAM']",
-notebookGPU = "GPUs"
+notebookGPU = "GPUs",
+
+projectid = "//select[@id='projectId']",
+testingNotebook = "//option[text()='Testing Notebook']",
+test = "//option[text()='Test']",
+notebook1 = "//option[text()='notebook1']",
+perfprojectejaB = "//option[text()='PerfprojectejaB']",
+perfprojectfqRs = "//option[text()='PerfprojectfqRs']",
+perfprojectqZyD = "//option[text()='PerfprojectqZyD']",
+perfproject4CDHS = "//option[text()='Perfproject4CDHS']",
+demoprojectNbfT = "//option[text()='DemoprojectNbfT']"
 };
 
 
@@ -85,6 +95,114 @@ function datascience_notebookserver(selectorConfig) {
 datascience_notebookserver.prototype.clickDatascience = function () {
     return element(by.id(this.dataScience)).click().then(function () {
         logger.info("clicked on Data Science...");
+    });
+};
+
+datascience_notebookserver.prototype.clickProjectID = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.projectid))), 160000).then(function () {
+        logger.info("Waiting for projectID to be clickable...");
+    }).catch(function (err) {
+        logger.info("projectID is not clickable...");
+    });
+    return element(by.xpath(this.projectid)).click().then(function () {
+        logger.info("clicked on projectID......");
+    });
+};
+
+datascience_notebookserver.prototype.clicktestingNotebook = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.testingNotebook))), 160000).then(function () {
+        logger.info("Waiting for testingNotebook to be clickable...");
+    }).catch(function (err) {
+        logger.info("testingNotebook is not clickable...");
+    });
+    return element(by.xpath(this.testingNotebook)).click().then(function () {
+        logger.info("clicked on testingNotebook......");
+    });
+};
+
+datascience_notebookserver.prototype.clicktest = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.test))), 160000).then(function () {
+        logger.info("Waiting for Test to be clickable...");
+    }).catch(function (err) {
+        logger.info("Test is not clickable...");
+    });
+    return element(by.xpath(this.test)).click().then(function () {
+        logger.info("clicked on Test......");
+    });
+};
+
+datascience_notebookserver.prototype.clicknotebook1 = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.notebook1))), 160000).then(function () {
+        logger.info("Waiting for Notebook1 to be clickable...");
+    }).catch(function (err) {
+        logger.info("Notebook1 is not clickable...");
+    });
+    return element(by.xpath(this.notebook1)).click().then(function () {
+        logger.info("clicked on Notebook1......");
+    });
+};
+
+datascience_notebookserver.prototype.clickperfprojectejaB = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.perfprojectejaB))), 160000).then(function () {
+        logger.info("Waiting for perfprojectejaB to be clickable...");
+    }).catch(function (err) {
+        logger.info("perfprojectejaB is not clickable...");
+    });
+    return element(by.xpath(this.perfprojectejaB)).click().then(function () {
+        logger.info("clicked on perfprojectejaB......");
+    });
+};
+
+datascience_notebookserver.prototype.clickperfprojectfqRs = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.perfprojectfqRs))), 160000).then(function () {
+        logger.info("Waiting for perfprojectejaB to be clickable...");
+    }).catch(function (err) {
+        logger.info("perfprojectejaB is not clickable...");
+    });
+    return element(by.xpath(this.perfprojectfqRs)).click().then(function () {
+        logger.info("clicked on perfprojectejaB......");
+    });
+};
+
+datascience_notebookserver.prototype.clickperfprojectqZyD = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.perfprojectqZyD))), 160000).then(function () {
+        logger.info("Waiting for perfprojectqZyD to be clickable...");
+    }).catch(function (err) {
+        logger.info("perfprojectqZyD is not clickable...");
+    });
+    return element(by.xpath(this.perfprojectqZyD)).click().then(function () {
+        logger.info("clicked on perfprojectqZyD......");
+    });
+};
+
+datascience_notebookserver.prototype.clickperfproject4CDHS = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.perfproject4CDHS))), 160000).then(function () {
+        logger.info("Waiting for perfproject4CDHS to be clickable...");
+    }).catch(function (err) {
+        logger.info("perfproject4CDHS is not clickable...");
+    });
+    return element(by.xpath(this.perfproject4CDHS)).click().then(function () {
+        logger.info("clicked on perfproject4CDHS......");
+    });
+};
+
+datascience_notebookserver.prototype.clickdemoprojectNbfT = function () {
+        
+    browser.wait(EC.elementToBeClickable(element(by.xpath(this.demoprojectNbfT))), 160000).then(function () {
+        logger.info("Waiting for demoprojectNbfT to be clickable...");
+    }).catch(function (err) {
+        logger.info("demoprojectNbfT is not clickable...");
+    });
+    return element(by.xpath(this.demoprojectNbfT)).click().then(function () {
+        logger.info("clicked on demoprojectNbfT......");
     });
 };
 
